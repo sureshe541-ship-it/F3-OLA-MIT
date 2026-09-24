@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="NOVA is a professional AI workspace for conversation, creative generation, and coding." />
+    <title>NOVA — Professional AI Workspace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <div class="brand">
+          <div class="brand-mark">N</div>
+          <div><strong>NOVA</strong><span>AI WORKSPACE</span></div>
+        </div>
+
+        <button class="new-chat" id="newChatButton"><span>＋</span> New conversation <kbd>⌘ K</kbd></button>
+
+        <nav class="nav-list">
+          <p class="nav-label">Workspace</p>
+          <button class="nav-item active" data-view="chat"><span class="nav-icon">✦</span> Chat <span class="nav-count">4</span></button>
+          <button class="nav-item" data-view="create"><span class="nav-icon">◈</span> Create</button>
+          <button class="nav-item" data-view="code"><span class="nav-icon">&lt;/&gt;</span> Code</button>
+          <button class="nav-item" data-view="library"><span class="nav-icon">▧</span> Library</button>
+        </nav>
+
+        <div class="recent">
+          <p class="nav-label">Recent</p>
+          <button class="recent-item">Q3 launch strategy</button>
+          <button class="recent-item">Product architecture review</button>
+          <button class="recent-item">A cinematic travel concept</button>
+        </div>
+
+        <div class="sidebar-footer">
+          <div class="plan-card"><div><span class="status-dot"></span> Pro plan</div><small>2,840 credits remaining</small><div class="progress"><i></i></div></div>
+          <button class="profile"><div class="avatar">S</div><span><strong>Suresh E.</strong><small>Personal workspace</small></span><b>•••</b></button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div><span class="eyebrow">PERSONAL WORKSPACE / <b id="viewLabel">CHAT</b></span><h1 id="pageTitle">Good morning, Suresh</h1></div>
+          <div class="top-actions"><button class="icon-button" title="Search">⌕</button><button class="icon-button" title="Notifications">♢<i></i></button><button class="upgrade-button">Upgrade <span>↗</span></button></div>
+        </header>
+
+        <section class="view active-view" id="chatView">
+          <div class="hero-copy"><span class="sparkle">✦</span><h2>What are we creating today?</h2><p>Ask anything, build everything. NOVA brings your ideas to life.</p></div>
+          <div class="prompt-grid">
+            <button class="prompt-card" data-prompt="Help me plan and launch a new product"><span class="card-icon blue">↗</span><strong>Plan & strategize</strong><small>Turn ideas into clear, actionable plans</small><em>→</em></button>
+            <button class="prompt-card" data-prompt="Create a visual concept for a modern creative studio"><span class="card-icon purple">✧</span><strong>Create something visual</strong><small>Images, videos, and visual concepts</small><em>→</em></button>
+            <button class="prompt-card" data-prompt="Review this architecture and suggest improvements"><span class="card-icon orange">⌘</span><strong>Build & code</strong><small>Ship better software, faster</small><em>→</em></button>
+          </div>
+          <div class="chat-area" id="chatArea"><div class="welcome-message"><span class="mini-logo">N</span><div><strong>NOVA</strong><p>I'm ready when you are. Start a conversation or choose a workspace above.</p></div></div></div>
+          <form class="composer" id="chatForm"><button type="button" class="attach-button" title="Attach a file">＋</button><input id="promptInput" autocomplete="off" placeholder="Message NOVA..." /><button type="button" class="voice-button" title="Voice input">◉</button><button class="send-button" type="submit" title="Send">↑</button><div class="composer-tools"><span>Model <b>NOVA Pro⌄</b></span><span>◌ Web access</span><span class="shortcut">Enter to send · Shift + Enter for newline</span></div></form>
+        </section>
+
+        <section class="view" id="createView"><div class="section-heading"><div><span class="eyebrow">CREATIVE STUDIO</span><h2>Make something remarkable.</h2><p>Transform a simple idea into polished visual content.</p></div><button class="primary-button">＋ New project</button></div><div class="creation-grid"><article class="creation-card image-card"><div class="creation-art art-image"><span>IMAGE</span><b>Visual concepts</b></div><div class="creation-info"><strong>Image generation</strong><small>Concept art, product shots, and more</small><button data-prompt="Create a visual concept for a modern creative studio">Start creating →</button></div></article><article class="creation-card"><div class="creation-art art-video"><span>VIDEO</span><b>Stories in motion</b></div><div class="creation-info"><strong>Video generation</strong><small>Bring your narrative to the screen</small><button data-prompt="Create a cinematic 10-second video concept for a new brand">Start creating →</button></div></article><article class="creation-card"><div class="creation-art art-audio"><span>AUDIO</span><b>Find your sound</b></div><div class="creation-info"><strong>Audio & voice</strong><small>Voiceovers, music, and sound design</small><button data-prompt="Help me write a voiceover script for a product launch">Start creating →</button></div></article></div></section>
+
+        <section class="view" id="codeView"><div class="section-heading"><div><span class="eyebrow">ENGINEERING COPILOT</span><h2>Ship with confidence.</h2><p>From first prototype to production-ready code.</p></div><button class="primary-button">＋ New coding session</button></div><div class="code-layout"><div class="code-panel"><div class="panel-tabs"><span class="active">Assistant</span><span>Code review</span><span>Debug</span></div><div class="code-prompt"><span class="card-icon orange">⌘</span><div><strong>What are you building?</strong><p>Describe a feature, paste an error, or ask for an architecture review.</p></div></div><div class="code-suggestions"><button data-prompt="Build a responsive dashboard component with accessible keyboard navigation">Build a component <b>→</b></button><button data-prompt="Review my code for security issues and performance improvements">Review code <b>→</b></button><button data-prompt="Explain this error and provide a production-ready fix">Fix an error <b>→</b></button></div></div><div class="terminal-preview"><div class="terminal-head"><span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span><small>nova-terminal</small></div><pre><span class="muted">$</span> nova init my-project
+
+<span class="green-text">✓</span> Workspace initialized
+<span class="green-text">✓</span> AI pair programmer connected
+<span class="muted">→</span> Ready to build something great</pre></div></div></section>
+
+        <section class="view" id="libraryView"><div class="section-heading"><div><span class="eyebrow">YOUR LIBRARY</span><h2>Everything in one place.</h2><p>Find your conversations, creations, and projects.</p></div><button class="filter-button">All content⌄</button></div><div class="library-empty"><div class="empty-icon">◫</div><h3>Your library is waiting</h3><p>Saved outputs and projects will appear here as you create with NOVA.</p><button class="primary-button" id="libraryCreateButton">Start creating</button></div></section>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
